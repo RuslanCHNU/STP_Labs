@@ -1,0 +1,15 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<h1>Список замовлень</h1>
+<a href="{% url 'create_order' %}">Додати нове замовлення</a>
+<ul>
+    {% for order in orders %}
+    <li>
+        {{ order.title }}
+        <a href="{% url 'update_order' order.pk %}">Редагувати</a>
+        <a href="{% url 'delete_order' order.pk %}">Видалити</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

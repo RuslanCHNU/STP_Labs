@@ -1,0 +1,11 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<h1>Видалити замовлення "{{ order.title }}"</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Ви впевнені, що хочете видалити це замовлення?</p>
+    <button type="submit">Так, видалити</button>
+    <a href="{% url 'order_list' %}">Скасувати</a>
+</form>
+{% endblock %}
