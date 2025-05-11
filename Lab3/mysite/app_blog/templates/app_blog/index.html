@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Головна сторінка блогу</title>
+</head>
+
+<body>
+    <h1>Останні статті</h1>
+    {% for article in articles %}
+    <div>
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.description|truncatechars:100 }}</p>
+        <small>Опубліковано: {{ article.pub_date }}</small>
+        <hr>
+    </div>
+    {% empty %}
+    <p>Статей поки немає.</p>
+    {% endfor %}
+</body>
+
+</html>

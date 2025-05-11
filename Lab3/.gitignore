@@ -1,0 +1,51 @@
+# Віртуальне оточення
+venv/
+.venv/
+env/
+
+# Файли бази даних (SQLite)
+*.sqlite3
+*.db
+
+# IDE та редактори
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Python кеш та компільовані файли
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Медіа та статичні файли (якщо вони генеруються автоматично)
+media/
+static/
+
+# Файли середовища
+.env
+.env.local
+.env.*.local
+
+# Логи та тимчасові файли
+*.log
+*.tmp
+*.temp
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Відомі залежності (можна відновити через `pip install`)
+*.egg-info/
+dist/
+build/
