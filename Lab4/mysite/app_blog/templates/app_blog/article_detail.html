@@ -1,0 +1,40 @@
+{% extends "app_blog/base.html" %}
+{% load static %}
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block content %}
+<article>
+    <!-- Хлібні крихти -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Головна</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'articles-list' %}">Статті</a></li>
+            <li class="breadcrumb-item active">{{ item.title }}</li>
+        </ol>
+    </nav>
+
+    <!-- Заголовок та дата -->
+    <h1>{{ item.title }}</h1>
+    <p class="text-muted">Опубліковано: {{ item.pub_date|date:"d.m.Y H:i" }}</p>
+
+    <!-- Текст статті -->
+    <div class="article-content">
+        {{ item.description|safe }}
+    </div>
+
+    <!-- Галерея зображень -->
+    {% if item.images.all %}
+    <div class="mt-4">
+        <h4>Галерея</h4>
+        <div class="row">
+            {% for image in item.images.all %}
+            <div class="col-md-4 mb-3">
+                <img src="{{ image.image.url }}" class="img-fluid" alt="{{ image.title }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "app_blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <!-- Список категорій -->
+    <div class="col-md-3">
+        <h4>Категорії</h4>
+        <div class="list-group">
+            {% for category in categories %}
+            <a href="{{ category.get_absolute_url }}" class="list-group-item list-group-item-action">
+                {{ category.category }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Останні статті -->
+    <div class="col-md-9">
+        <h2>Останні публікації</h2>
+        {% for article in articles %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.description|truncatechars:200 }}</p>
+                <a href="{{ article.get_absolute_url }}" class="btn btn-primary">Читати далі</a>
+                <small class="text-muted ml-2">{{ article.pub_date|date:"d.m.Y" }}</small>
+            </div>
+        </div>
+        {% empty %}
+        <p>Статей поки немає.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
