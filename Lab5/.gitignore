@@ -1,0 +1,29 @@
+# Файли збірок та виконувані файли
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Файли середовища Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Файли конфігурації (якщо не потрібно ігнорувати App.config)
+#!App.config
+
+# Файли NuGet
+packages/
+*.nupkg
+
+# Файли резервних копій
+*.bak
+*.tmp
+
+# Інше
+.idea/
+.vscode/
