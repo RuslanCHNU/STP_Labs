@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksService", "AdventureWorksService\AdventureWorksService.csproj", "{6DDE9208-5038-4520-9463-377669326529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksSalesEditor", "AdventureWorksSalesEditor\AdventureWorksSalesEditor.csproj", "{D3328DB7-C9AC-4C30-A99E-F4EA9D214890}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DDE9208-5038-4520-9463-377669326529} = {6DDE9208-5038-4520-9463-377669326529}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertServices", "ConvertServices\ConvertServices.csproj", "{065D8944-4665-48E2-A230-235BF94B0487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DDE9208-5038-4520-9463-377669326529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DDE9208-5038-4520-9463-377669326529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DDE9208-5038-4520-9463-377669326529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DDE9208-5038-4520-9463-377669326529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3328DB7-C9AC-4C30-A99E-F4EA9D214890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3328DB7-C9AC-4C30-A99E-F4EA9D214890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3328DB7-C9AC-4C30-A99E-F4EA9D214890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3328DB7-C9AC-4C30-A99E-F4EA9D214890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065D8944-4665-48E2-A230-235BF94B0487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065D8944-4665-48E2-A230-235BF94B0487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065D8944-4665-48E2-A230-235BF94B0487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065D8944-4665-48E2-A230-235BF94B0487}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6B4CA51-3546-4788-BD1D-F0BF9753FF5D}
+	EndGlobalSection
+EndGlobal
