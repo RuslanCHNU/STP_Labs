@@ -1,0 +1,5 @@
+﻿<%@ ServiceHost 
+    Language="C#" 
+    Service="StudentService.StudentService" 
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory" 
+%>

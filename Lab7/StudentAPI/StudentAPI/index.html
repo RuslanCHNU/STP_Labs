@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Студенти</title>
+    <!-- Підключення jQuery для AJAX-запитів -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Список студентів</h1>
+
+    <!-- Секція для відображення списку всіх студентів -->
+    <div>
+        <h2>Всі студенти</h2>
+        <ul id="studentsList"></ul>
+    </div>
+
+    <!-- Секція для пошуку студента за номером картки -->
+    <div>
+        <h2>Пошук студента</h2>
+        <input type="number" id="studentId" placeholder="Номер картки">
+        <button onclick="findStudent()">Пошук</button>
+        <p id="searchResult"></p>
+    </div>
+
+    <!-- JavaScript-код для взаємодії з API -->
+    <script>
+        // Функція для відображення списку студентів
+        $(document).ready(function () {
+            // Запит до API для отримання всіх студентів
+            $.ajax({
+                url: 'api/students',
+                type: 'GET',
+                success: function (data) {
+                    var list = $('#studentsList');
+                    list.empty();
+                    $.each(data, function (index, student) {
+                        list.append(
+                            '<li>' + student.FullName + ' (Курс: ' + student.Course + ')</li>'
+                        );
+                    });
+                },
+                error: function (error) {
+                    console.error('Помилка:', error);
+                }
+            });
+        });
+
+        // Функція для пошуку студента за номером картки
+        function findStudent() {
+            var studentId = $('#studentId').val();
+            $.ajax({
+                url: 'api/students/' + studentId,
+                type: 'GET',
+                success: function (student) {
+                    $('#searchResult').text(
+                        'Знайдено: ' + student.FullName + ' (Курс: ' + student.Course + ')'
+                    );
+                },
+                error: function (error) {
+                    $('#searchResult').text('Студента не знайдено!');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
